@@ -61,7 +61,9 @@ def page(
 ) -> str:
     home = asset(depth, "index.html")
     css = asset(depth, "css/style.css")
+    custom_css = asset(depth, "css/custom.css")
     favicon = asset(depth, "favicon.ico")
+    logo = asset(depth, "images/makers-mark.png")
     plugins = asset(depth, "js/plugins-min.js")
     duet = asset(depth, "js/duet-min.js")
     home_active = " cc-active" if active == "home" else ""
@@ -91,6 +93,7 @@ def page(
 
 \t<meta name="viewport" content="width=device-width, initial-scale=1" />
 \t<link rel="stylesheet" href="{css}" />
+\t<link rel="stylesheet" href="{custom_css}" />
 
 \t<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
 \t<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
@@ -101,8 +104,9 @@ def page(
 
 \t<header class="header">
 \t\t<div class="wrap">
-\t\t\t<a href="{home}" class="header__title{home_active}">
-\t\t\t\t{SITE_NAME}
+\t\t\t<a href="{home}" class="header__logo{home_active}" aria-label="{SITE_NAME}">
+\t\t\t\t<img src="{logo}" alt="{SITE_NAME}" class="header__logo__img" onerror="this.style.display='none';this.nextElementSibling.hidden=false;" />
+\t\t\t\t<span class="header__title-fallback" hidden>{SITE_NAME}</span>
 \t\t\t</a>
 
 \t\t\t<div class="menu">

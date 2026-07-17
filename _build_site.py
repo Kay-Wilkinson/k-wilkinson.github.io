@@ -61,7 +61,7 @@ def page(
 ) -> str:
     home = asset(depth, "index.html")
     css = asset(depth, "css/style.css")
-    favicon = asset(depth, "images/favicon.png")
+    favicon = asset(depth, "favicon.ico")
     plugins = asset(depth, "js/plugins-min.js")
     duet = asset(depth, "js/duet-min.js")
     home_active = " cc-active" if active == "home" else ""
@@ -73,7 +73,8 @@ def page(
 \t<meta charset="utf-8" />
 \t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-\t<link rel="shortcut icon" href="{favicon}" />
+\t<link rel="icon" href="{favicon}" type="image/x-icon" />
+\t<link rel="shortcut icon" href="{favicon}" type="image/x-icon" />
 \t<title>{title}</title>
 \t<meta name="description" content="{description}" />
 
@@ -201,10 +202,11 @@ home_content = f"""
 
 <section class="portfolio">
 \t<div class="content-wrap portfolio-wrap">
+{portfolio_item("illustrations/haida-style-parakeet.html", "images/illustrations/haida-style-parakeet.jpg", "Haida Style Parakeet", "Illustration")}
+{portfolio_item("illustrations/sail-2030.html", "images/illustrations/sail-2030.jpg", "SAIL 2030", "Illustration")}
+{portfolio_item("illustrations/sailor-jerry-gypsy-moth-iv.html", "images/illustrations/sailor-jerry-gypsy-moth-iv.jpg", "Sailor Jerry Gypsy Moth IV", "Illustration")}
 {portfolio_item("photography/golden-hour.html", "images/photography/golden-hour.svg", "Golden Hour", "Photography")}
-{portfolio_item("illustrations/ink-study.html", "images/illustrations/ink-study.svg", "Ink Study", "Illustration")}
 {portfolio_item("photography/harbour-light.html", "images/photography/harbour-light.svg", "Harbour Light", "Photography")}
-{portfolio_item("illustrations/colour-wash.html", "images/illustrations/colour-wash.svg", "Colour Wash", "Illustration")}
 \t</div>
 </section>
 """
@@ -261,8 +263,9 @@ ill_listing = f"""
 
 <section class="portfolio">
 \t<div class="content-wrap portfolio-wrap">
-{portfolio_item("illustrations/ink-study.html", "images/illustrations/ink-study.svg", "Ink Study", "July 2026")}
-{portfolio_item("illustrations/colour-wash.html", "images/illustrations/colour-wash.svg", "Colour Wash", "May 2026")}
+{portfolio_item("illustrations/haida-style-parakeet.html", "images/illustrations/haida-style-parakeet.jpg", "Haida Style Parakeet", "Illustration")}
+{portfolio_item("illustrations/sail-2030.html", "images/illustrations/sail-2030.jpg", "SAIL 2030", "Illustration")}
+{portfolio_item("illustrations/sailor-jerry-gypsy-moth-iv.html", "images/illustrations/sailor-jerry-gypsy-moth-iv.jpg", "Sailor Jerry Gypsy Moth IV", "Illustration")}
 \t</div>
 </section>
 """
@@ -324,44 +327,59 @@ Describe the subject, the evening, or the feeling you wanted to hold onto.""",
 )
 
 write(
-    "illustrations/ink-study.html",
+    "illustrations/haida-style-parakeet.html",
     page(
-        title=f"Ink Study – {SITE_NAME}",
-        description="Ink Study — an illustration piece.",
+        title=f"Haida Style Parakeet – {SITE_NAME}",
+        description="Haida Style Parakeet — an illustration piece.",
         depth=1,
         active="illustrations",
-        page_url="/illustrations/ink-study.html",
+        page_url="/illustrations/haida-style-parakeet.html",
         content=detail_content(
-            "Ink Study",
-            "8 July 2026",
-            "../images/illustrations/ink-study.svg",
-            "Ink Study",
-            """Replace this passage with your write-up about the illustration — materials, process, or what the piece is exploring.
-
-Keep the artwork file in images/illustrations/ and point the image src at it.""",
+            "Haida Style Parakeet",
+            "2026",
+            "../images/illustrations/haida-style-parakeet.jpg",
+            "Haida Style Parakeet",
+            """Replace this passage with your write-up about the piece — materials, process, or what inspired it.""",
         ),
-        og_image="../images/illustrations/ink-study.svg",
+        og_image="../images/illustrations/haida-style-parakeet.jpg",
     ),
 )
 
 write(
-    "illustrations/colour-wash.html",
+    "illustrations/sail-2030.html",
     page(
-        title=f"Colour Wash – {SITE_NAME}",
-        description="Colour Wash — an illustration piece.",
+        title=f"SAIL 2030 – {SITE_NAME}",
+        description="SAIL 2030 — an illustration piece.",
         depth=1,
         active="illustrations",
-        page_url="/illustrations/colour-wash.html",
+        page_url="/illustrations/sail-2030.html",
         content=detail_content(
-            "Colour Wash",
-            "21 May 2026",
-            "../images/illustrations/colour-wash.svg",
-            "Colour Wash",
-            """Replace this passage with your write-up about the illustration.
-
-Mention medium, palette, or the idea behind the wash.""",
+            "SAIL 2030",
+            "2026",
+            "../images/illustrations/sail-2030.jpg",
+            "SAIL 2030",
+            """Replace this passage with your write-up about the piece — materials, process, or what inspired it.""",
         ),
-        og_image="../images/illustrations/colour-wash.svg",
+        og_image="../images/illustrations/sail-2030.jpg",
+    ),
+)
+
+write(
+    "illustrations/sailor-jerry-gypsy-moth-iv.html",
+    page(
+        title=f"Sailor Jerry Gypsy Moth IV – {SITE_NAME}",
+        description="Sailor Jerry Gypsy Moth IV — an illustration piece.",
+        depth=1,
+        active="illustrations",
+        page_url="/illustrations/sailor-jerry-gypsy-moth-iv.html",
+        content=detail_content(
+            "Sailor Jerry Gypsy Moth IV",
+            "2026",
+            "../images/illustrations/sailor-jerry-gypsy-moth-iv.jpg",
+            "Sailor Jerry Gypsy Moth IV",
+            """Replace this passage with your write-up about the piece — materials, process, or what inspired it.""",
+        ),
+        og_image="../images/illustrations/sailor-jerry-gypsy-moth-iv.jpg",
     ),
 )
 

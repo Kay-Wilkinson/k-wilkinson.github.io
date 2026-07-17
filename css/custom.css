@@ -6,19 +6,19 @@
 
 .header__logo__img {
 	width: auto;
-	height: 48px;
+	height: 55px;
 	display: block;
 }
 
 @media only screen and (min-width: 768px) {
 	.header__logo__img {
-		height: 56px;
+		height: 64px;
 	}
 }
 
 @media only screen and (min-width: 1220px) {
 	.header__logo__img {
-		height: 64px;
+		height: 74px;
 	}
 }
 
